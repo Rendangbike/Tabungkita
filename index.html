@@ -3,220 +3,140 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tabungkit Dashboard</title>
+    <title>Tabungkit - Save While You Spend</title>
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-color: #f0f0f0;
             margin: 0;
             padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
         }
         .header {
             background-color: #3f6c1c;
             color: white;
-            padding: 10px 20px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
+            padding: 20px;
+            text-align: center;
         }
         .header h1 {
             margin: 0;
         }
-        .header-icons {
-            display: flex;
-            gap: 15px;
-        }
-        .header-icons i {
-            font-size: 24px;
-        }
-        .content {
-            padding: 20px;
-        }
-        .goal-card {
-            background-color: #f5f5f5;
-            padding: 15px;
-            margin-bottom: 10px;
-            border-radius: 10px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        .goal-card h2 {
-            margin: 0;
-            color: #3f6c1c;
-        }
-        .goal-card p {
-            margin: 5px 0;
-            font-size: 14px;
-        }
-        .add-goal {
-            background-color: #f5f5f5;
-            padding: 15px;
-            margin-top: 10px;
-            border-radius: 10px;
+        .hero {
+            background-color: #8fbc8f;
+            color: white;
+            padding: 60px 20px;
             text-align: center;
-            font-weight: bold;
-            color: #3f6c1c;
-            cursor: pointer;
         }
-        .popup {
-            position: fixed;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            background-color: #d6dbd2;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            display: none;
+        .hero h2 {
+            font-size: 2.5em;
+            margin: 0;
         }
-        .popup h2 {
-            margin-top: 0;
+        .hero p {
+            font-size: 1.2em;
+            margin-top: 10px;
         }
-        .popup input, .popup select {
-            width: 100%;
-            padding: 10px;
-            margin: 10px 0;
-            border: 1px solid #ccc;
-            border-radius: 5px;
+        .features, .user-journey, .incentives, .cta {
+            padding: 40px 20px;
+            text-align: center;
         }
-        .popup button {
+        .features h2, .user-journey h2, .incentives h2, .cta h2 {
+            font-size: 2em;
+            margin-bottom: 20px;
+        }
+        .features p, .user-journey p, .incentives p {
+            font-size: 1.1em;
+            margin-bottom: 20px;
+        }
+        .cta button {
             background-color: #3f6c1c;
             color: white;
             border: none;
-            padding: 10px 20px;
-            border-radius: 5px;
+            padding: 15px 30px;
+            font-size: 1.2em;
             cursor: pointer;
+            border-radius: 5px;
         }
-        .exit-button {
-            background-color: #ff0000;
-            color: white;
-            border: none;
-            padding: 10px 20px;
-            border-radius: 5px;
-            cursor: pointer;
-            float: right;
+        .cta button:hover {
+            background-color: #2e5016;
+        }
+        .section {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .features .feature-item, .user-journey .journey-step, .incentives .incentive-item {
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
     </style>
 </head>
 <body>
-    <div class="header">
-        <h1>Tabungkit</h1>
-        <div class="header-icons">
-            <i class="home">🏠</i>
-            <i class="globe">🌐</i>
-            <i class="user" onclick="showSignInPopup()">👤</i>
-        </div>
+
+<div class="header">
+    <h1>Tabungkit</h1>
+    <p>Save While You Spend</p>
+</div>
+
+<div class="hero">
+    <h2>Tabungkit adalah aplikasi keuangan yang membantu Anda menabung dengan mudah</h2>
+    <p>Dengan menerapkan "pajak" pada setiap pembelian yang Anda lakukan, Anda dapat mengumpulkan dana untuk tujuan keuangan Anda tanpa usaha tambahan.</p>
+</div>
+
+<div class="features section">
+    <h2>Fitur Utama</h2>
+    <div class="feature-item">
+        <p><strong>Orientasi Pengguna:</strong> Daftar dan tautkan rekening bank atau kartu kredit/debit Anda dengan aman.</p>
     </div>
-    <div class="content" id="goalList">
-        <div class="goal-card">
-            <div>
-                <h2>Holiday to Paris</h2>
-                <p>Rp 30.250.000 / <strong>45.888.000</strong></p>
-                <p>10% / 2 weeks - 7 months</p>
-            </div>
-            <i class="menu">⋮</i>
-        </div>
-        <div class="goal-card">
-            <div>
-                <h2>Buy TV</h2>
-                <p>Rp 700.000 / <strong>2.000.000</strong></p>
-                <p>3% / every purchase</p>
-            </div>
-            <i class="menu">⋮</i>
-        </div>
-        <div class="add-goal" onclick="showAddGoalPopup()">
-            <i class="plus">➕</i> Add more goals...
-        </div>
+    <div class="feature-item">
+        <p><strong>Menetapkan Tujuan Tabungan:</strong> Tetapkan tujuan keuangan seperti liburan, membeli gadget, atau membangun dana darurat.</p>
     </div>
-    <div class="popup" id="signInPopup">
-        <button class="exit-button" onclick="hideSignInPopup()">✖</button>
-        <h2>Sign in</h2>
-        <form id="signInForm">
-            <label for="name">Name:</label>
-            <input type="text" id="name" name="name" required>
-            <label for="account">Account:</label>
-            <input type="text" id="account" name="account" required>
-            <button type="submit">Sign in</button>
-        </form>
+    <div class="feature-item">
+        <p><strong>Mengonfigurasi "Pajak":</strong> Pilih persentase atau jumlah tetap yang akan diterapkan sebagai "pajak" pada setiap pembelian.</p>
     </div>
-    <div class="popup" id="addGoalPopup">
-        <button class="exit-button" onclick="hideAddGoalPopup()">✖</button>
-        <h2>Add Goal</h2>
-        <form id="addGoalForm">
-            <label for="goalName">Goal Name:</label>
-            <input type="text" id="goalName" name="goalName" required>
-            <label for="goalAmount">Goal Amount:</label>
-            <input type="number" id="goalAmount" name="goalAmount" required>
-            <label for="duration">Duration:</label>
-            <input type="text" id="duration" name="duration" required>
-            <label for="taxType">Tax Type:</label>
-            <select id="taxType" name="taxType" required>
-                <option value="percentage">Percentage</option>
-                <option value="fixed">Fixed Amount</option>
-            </select>
-            <label for="taxValue">Tax Value:</label>
-            <input type="number" id="taxValue" name="taxValue" required>
-            <button type="submit">Add Goal</button>
-        </form>
+    <div class="feature-item">
+        <p><strong>Perhitungan Otomatis:</strong> Aplikasi secara otomatis menghitung dan memindahkan "pajak" ke tabungan Anda setiap kali pembelian dilakukan.</p>
     </div>
-    <script>
-        function showSignInPopup() {
-            document.getElementById('signInPopup').style.display = 'block';
-        }
+    <div class="feature-item">
+        <p><strong>Pelacakan Waktu Nyata:</strong> Lihat pembaruan real-time tentang kemajuan tabungan untuk setiap tujuan.</p>
+    </div>
+</div>
 
-        function hideSignInPopup() {
-            document.getElementById('signInPopup').style.display = 'none';
-        }
+<div class="user-journey section">
+    <h2>Cara Kerja</h2>
+    <div class="journey-step">
+        <p><strong>1. Pendaftaran dan Penautan Akun:</strong> Pengguna mendaftar menggunakan nama dan menautkan rekening bank atau kartu mereka.</p>
+    </div>
+    <div class="journey-step">
+        <p><strong>2. Menetapkan Tujuan Tabungan:</strong> Pengguna menetapkan tujuan keuangan seperti liburan atau membeli gadget.</p>
+    </div>
+    <div class="journey-step">
+        <p><strong>3. Mengonfigurasi "Pajak":</strong> Pilih persentase atau jumlah tetap yang akan diterapkan sebagai "pajak" pada setiap pembelian.</p>
+    </div>
+    <div class="journey-step">
+        <p><strong>4. Perhitungan Otomatis:</strong> Aplikasi menghitung dan memindahkan "pajak" ke tabungan setiap kali pembelian dilakukan.</p>
+    </div>
+    <div class="journey-step">
+        <p><strong>5. Pelacakan Waktu Nyata:</strong> Lihat pembaruan real-time tentang kemajuan tabungan untuk setiap tujuan.</p>
+    </div>
+</div>
 
-        document.getElementById('signInForm').addEventListener('submit', function(event) {
-            event.preventDefault();
-            const name = document.getElementById('name').value;
-            const account = document.getElementById('account').value;
-            localStorage.setItem('name', name);
-            localStorage.setItem('account', account);
-            window.location.href = '/dashboard.html';
-        });
+<div class="incentives section">
+    <h2>Insentif</h2>
+    <div class="incentive-item">
+        <p><strong>Hadiah dan Insentif:</strong> Dapatkan poin untuk setiap dolar yang dihemat, yang dapat ditukarkan dengan diskon atau kartu hadiah.</p>
+    </div>
+    <div class="incentive-item">
+        <p><strong>Gamifikasi:</strong> Raih lencana atau pencapaian untuk memotivasi Anda menabung lebih banyak.</p>
+    </div>
+</div>
 
-        function showAddGoalPopup() {
-            document.getElementById('addGoalPopup').style.display = 'block';
-        }
+<div class="cta section">
+    <h2>Bergabunglah dengan Tabungkit Sekarang</h2>
+    <p>Mulailah menabung dengan mudah dan capai tujuan keuangan Anda tanpa usaha tambahan.</p>
+    <button>Daftar Sekarang</button>
+</div>
 
-        function hideAddGoalPopup() {
-            document.getElementById('addGoalPopup').style.display = 'none';
-        }
-
-        document.getElementById('addGoalForm').addEventListener('submit', function(event) {
-            event.preventDefault();
-            const goalName = document.getElementById('goalName').value;
-            const goalAmount = document.getElementById('goalAmount').value;
-            const duration = document.getElementById('duration').value;
-            const taxType = document.getElementById('taxType').value;
-            const taxValue = document.getElementById('taxValue').value;
-
-            const newGoal = { goalName, goalAmount, duration, taxType, taxValue };
-            let goals = JSON.parse(localStorage.getItem('goals')) || [];
-            goals.push(newGoal);
-            localStorage.setItem('goals', JSON.stringify(goals));
-
-            addGoalToList(newGoal);
-            hideAddGoalPopup();
-        });
-
-        function addGoalToList(goal) {
-            const goalList = document.getElementById('goalList');
-            const goalCard = document.createElement('div');
-            goalCard.className = 'goal-card';
-            goalCard.innerHTML = `
-                <div>
-                    <h2>${goal.goalName}</h2>
-                    <p>Rp 0 / <strong>${goal.goalAmount}</strong></p>
-                    <p>${goal.taxType} / ${goal.duration}</p>
-                </div>
-                <i class="menu">⋮</i>
-            `;
-            goalList.insertBefore(goalCard, goalList.querySelector('.add-goal'));
-        }
-    </script>
 </body>
 </html>
