@@ -3,30 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tabungkit Dashboard</title>
+    <title>Tabungkita Dashboard</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="header">
-        <h1>Tabungkit</h1>
+        <a href="/" class="tabungkita"><h1>Tabungkita</h1></a>
         <div class="header-icons">
-            <i class="home">🏠</i>
+            <i class="home" onclick="location.href='/';">🏠</i>
             <i class="globe">🌐</i>
-            <i class="user" onclick="showSignInPopup()">👤</i>
         </div>
     </div>
 
     <div class="content" id="goalList">
         <div class="goal-card">
             <div>
-                <h2>Holiday to Paris</h2>
+                <h1>Holiday to Paris</h1>
                 <p>Rp 30.250.000 / <strong>45.888.000</strong></p>
                 <p>10% / 2 weeks - 7 months</p>
             </div>
         </div>
         <div class="goal-card">
             <div>
-                <h2>Buy TV</h2>
+                <h1>Buy TV</h1>
                 <p>Rp 700.000 / <strong>2.000.000</strong></p>
                 <p>3% / every purchase</p>
             </div>
@@ -34,18 +33,6 @@
         <div class="add-goal" onclick="showAddGoalPopup()">
             <i class="plus">➕</i> Add more goals...
         </div>
-    </div>
-
-    <div class="popup" id="signInPopup">
-        <button class="exit-button" onclick="hideSignInPopup()">✖</button>
-        <h2>Sign in</h2>
-        <form id="signInForm">
-            <label for="name">Name:</label>
-            <input type="text" id="name" name="name" required>
-            <label for="account">Account:</label>
-            <input type="text" id="account" name="account" required>
-            <button type="submit">Sign in</button>
-        </form>
     </div>
 
     <div class="popup" id="addGoalPopup">

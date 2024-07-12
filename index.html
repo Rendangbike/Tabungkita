@@ -4,80 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tabungkita - Save While You Spend</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f4;
-            color: #333;
-        }
-        .header {
-            background-color: #3f6c1c;
-            color: white;
-            padding: 20px;
-            text-align: center;
-        }
-        .header h1 {
-            margin: 0;
-        }
-        .hero {
-            background-color: #8fbc8f;
-            color: white;
-            padding: 60px 20px;
-            text-align: center;
-        }
-        .hero h2 {
-            font-size: 2.5em;
-            margin: 0;
-        }
-        .hero p {
-            font-size: 1.2em;
-            margin-top: 10px;
-        }
-        .features, .user-journey, .incentives, .cta {
-            padding: 40px 20px;
-            text-align: center;
-        }
-        .features h2, .user-journey h2, .incentives h2, .cta h2 {
-            font-size: 2em;
-            margin-bottom: 20px;
-        }
-        .features p, .user-journey p, .incentives p {
-            font-size: 1.1em;
-            margin-bottom: 20px;
-        }
-        .cta button {
-            background-color: #3f6c1c;
-            color: white;
-            border: none;
-            padding: 15px 30px;
-            font-size: 1.2em;
-            cursor: pointer;
-            border-radius: 5px;
-        }
-        .cta button:hover {
-            background-color: #2e5016;
-        }
-        .section {
-            max-width: 800px;
-            margin: 0 auto;
-        }
-        .features .feature-item, .user-journey .journey-step, .incentives .incentive-item {
-            background-color: white;
-            padding: 20px;
-            border-radius: 10px;
-            margin-bottom: 20px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-    </style>
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<div class="header">
-    <h1>Tabungkita</h1>
-    <p>Save While You Spend</p>
-</div>
+    <div class="header">
+        <h1>Tabungkit</h1>
+        <div class="header-icons">
+            <i class="home" onclick="location.href='/dashboard.html';" >📋</i>
+            <i class="globe">🌐</i>
+        </div>
+    </div>
 
 <div class="hero">
     <h2>Tabungkita adalah aplikasi keuangan yang membantu Anda menabung dengan mudah</h2>
@@ -135,8 +72,10 @@
 <div class="cta section">
     <h2>Bergabunglah dengan Tabungkita Sekarang</h2>
     <p>Mulailah menabung dengan mudah dan capai tujuan keuangan Anda tanpa usaha tambahan.</p>
-    <button>Daftar Sekarang</button>
+    <a href="/dashboard.html"><button>Daftar Sekarang</button></a>
 </div>
+
+<script src="main.js"></script>
 
 </body>
 </html>

@@ -1,20 +1,3 @@
-function showSignInPopup() {
-    document.getElementById('signInPopup').style.display = 'block';
-}
-
-function hideSignInPopup() {
-    document.getElementById('signInPopup').style.display = 'none';
-}
-
-document.getElementById('signInForm').addEventListener('submit', function(event) {
-    event.preventDefault();
-    const name = document.getElementById('name').value;
-    const account = document.getElementById('account').value;
-    localStorage.setItem('name', name);
-    localStorage.setItem('account', account);
-    window.location.href = '/dashboard.html';
-});
-
 function showAddGoalPopup() {
     document.getElementById('addGoalPopup').style.display = 'block';
 }
@@ -46,7 +29,7 @@ function addGoalToList(goal) {
     goalCard.className = 'goal-card';
     goalCard.innerHTML = `
         <div>
-            <h2>${goal.goalName}</h2>
+            <h1>${goal.goalName}</h1>
             <p>Rp 0 / <strong>${goal.goalAmount}</strong></p>
             <p>${goal.taxType} / ${goal.duration}</p>
         </div>

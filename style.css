@@ -1,6 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap');
-
- body {
+body {
   font-family: Arial, sans-serif;
   background-color: #f0f0f0;
   margin: 0;
@@ -24,6 +22,63 @@
 .header-icons i {
   font-size: 24px;
 }
+a {
+  color: white;
+  text-decoration: none; /* no underline */
+}
+
+/* landing page */
+.hero {
+  background-color: #8fbc8f;
+  color: white;
+  padding: 60px 20px;
+  text-align: center;
+}
+.hero h2 {
+  font-size: 2.5em;
+  margin: 0;
+}
+.hero p {
+  font-size: 1.2em;
+  margin-top: 10px;
+}
+.features, .user-journey, .incentives, .cta {
+  padding: 40px 20px;
+  text-align: center;
+}
+.features h2, .user-journey h2, .incentives h2, .cta h2 {
+  font-size: 2em;
+  margin-bottom: 20px;
+}
+.features p, .user-journey p, .incentives p {
+  font-size: 1.1em;
+  margin-bottom: 20px;
+}
+.cta button {
+  background-color: #3f6c1c;
+  color: white;
+  border: none;
+  padding: 15px 30px;
+  font-size: 1.2em;
+  cursor: pointer;
+  border-radius: 5px;
+}
+.cta button:hover {
+  background-color: #2e5016;
+}
+.section {
+  max-width: 800px;
+  margin: 0 auto;
+}
+.features .feature-item, .user-journey .journey-step, .incentives .incentive-item {
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Dashboard*/
 .content {
   padding: 20px;
 }
@@ -36,7 +91,7 @@
   justify-content: space-between;
   align-items: center;
 }
-.goal-card h2 {
+.goal-card h1 {
   margin: 0;
   color: #3f6c1c;
 }
