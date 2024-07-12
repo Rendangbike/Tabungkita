@@ -8,17 +8,18 @@
 </head>
 <body>
 
-    <div class="header">
+<div class="header">
         <h1>Tabungkita</h1>
+        <h3 class="slogan">Save While You Spend</h3>
         <div class="header-icons">
             <i class="home" onclick="location.href='/dashboard.html';" >📋</i>
-            <i class="globe">🌐</i>
+            <i class="reset" onclick="localStorage.clear(); location.reload();">🔄</i>
         </div>
-    </div>
+</div>
 
 <div class="hero">
     <h2>Tabungkita adalah aplikasi keuangan yang membantu Anda menabung dengan mudah</h2>
-    <p>Dengan menerapkan "pajak" pada setiap pembelian yang Anda lakukan, Anda dapat mengumpulkan dana untuk tujuan keuangan Anda tanpa usaha tambahan.</p>
+    <p>Dengan menerapkan "pajak" pada setiap pembelian atau waktu tertentu, Anda bisa mengumpulkan dana untuk tujuan keuangan tanpa usaha tambahan.</p>
 </div>
 
 <div class="features section">
@@ -27,52 +28,65 @@
         <p><strong>Menetapkan Tujuan Tabungan:</strong> Tetapkan tujuan keuangan seperti liburan, membeli gadget, atau membangun dana darurat.</p>
     </div>
     <div class="feature-item">
-        <p><strong>Mengonfigurasi "Pajak":</strong> Pilih persentase atau jumlah tetap yang akan diterapkan sebagai "pajak" pada setiap pembelian.</p>
+        <p><strong>Menentukan "Pajak":</strong> Pilih persentase atau jumlah tetap yang akan diterapkan sebagai "pajak" pada setiap pembelian.</p>
     </div>
     <div class="feature-item">
         <p><strong>Perhitungan Otomatis:</strong> Aplikasi secara otomatis menghitung dan memindahkan "pajak" ke tabungan Anda setiap kali pembelian dilakukan.</p>
     </div>
-    <div class="feature-item">
-        <p><strong>Pelacakan Waktu Nyata:</strong> Lihat pembaruan real-time tentang kemajuan tabungan untuk setiap tujuan.</p>
-    </div>
 </div>
 
-<div class="user-journey section">
-    <h2>Cara Kerja</h2>
-    <div class="journey-step">
-        <p><strong>1. Pendaftaran dan Penautan Akun:</strong> Pengguna mendaftar menggunakan nama dan menautkan rekening bank atau kartu mereka.</p>
+<div class="container">
+    <div class="step">
+        <div class="step-icon">1</div>
+        <div class="step-content">
+            <p><strong>Steve signs up</strong> for the Tabungkita app and links his bank account.</p>
+        </div>
     </div>
-    <div class="journey-step">
-        <p><strong>2. Menetapkan Tujuan Tabungan:</strong> Pengguna menetapkan tujuan keuangan seperti liburan atau membeli gadget.</p>
+    <div class="step">
+        <div class="step-icon">2</div>
+        <div class="step-content">
+            <p><strong>He sets a goal</strong> to save $1000 for a vacation in 6 months.</p>
+        </div>
     </div>
-    <div class="journey-step">
-        <p><strong>3. Mengonfigurasi "Pajak":</strong> Pilih persentase atau jumlah tetap yang akan diterapkan sebagai "pajak" pada setiap pembelian.</p>
+    <div class="step">
+        <div class="step-icon">3</div>
+        <div class="step-content">
+            <p><strong>Steve configures</strong> a 5% "tax" on all his purchases.</p>
+        </div>
     </div>
-    <div class="journey-step">
-        <p><strong>4. Perhitungan Otomatis:</strong> Aplikasi menghitung dan memindahkan "pajak" ke tabungan setiap kali pembelian dilakukan.</p>
+    <div class="step">
+        <div class="step-icon">4</div>
+        <div class="step-content">
+            <p><strong>He spends $50</strong> on dinner, and $2.50 (5% of $50) is automatically transferred to his vacation savings.</p>
+        </div>
     </div>
-    <div class="journey-step">
-        <p><strong>5. Pelacakan Waktu Nyata:</strong> Lihat pembaruan real-time tentang kemajuan tabungan untuk setiap tujuan.</p>
+    <div class="step">
+        <div class="step-icon">5</div>
+        <div class="step-content">
+            <p><strong>Steve receives</strong> real-time updates and monthly reports on his savings progress.</p>
+        </div>
     </div>
-</div>
-
-<div class="incentives section">
-    <h2>Insentif</h2>
-    <div class="incentive-item">
-        <p><strong>Hadiah dan Insentif:</strong> Dapatkan poin untuk setiap dolar yang dihemat, yang dapat ditukarkan dengan diskon atau kartu hadiah.</p>
+    <div class="step">
+        <div class="step-icon">6</div>
+        <div class="step-content">
+            <p><strong>As he reaches savings milestones</strong>, Steve earns reward points and receives motivational badges.</p>
+        </div>
     </div>
-    <div class="incentive-item">
-        <p><strong>Gamifikasi:</strong> Raih lencana atau pencapaian untuk memotivasi Anda menabung lebih banyak.</p>
+    <div class="step">
+        <div class="step-icon">7</div>
+        <div class="step-content">
+            <p><strong>By integrating savings</strong> into everyday spending, Tabungkita makes it easier for users to achieve their financial goals without the need for separate, conscious actions.</p>
+        </div>
     </div>
 </div>
 
 <div class="cta section">
-    <h2>Bergabunglah dengan Tabungkita Sekarang</h2>
+    <h2>Gunakan Tabungkita Sekarang</h2>
     <p>Mulailah menabung dengan mudah dan capai tujuan keuangan Anda tanpa usaha tambahan.</p>
     <a href="/dashboard.html"><button>Daftar Sekarang</button></a>
 </div>
 
-<script src="main.js"></script>
+
 
 </body>
 </html>

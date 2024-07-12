@@ -26,6 +26,11 @@ a {
   color: white;
   text-decoration: none; /* no underline */
 }
+@media only screen and (max-width: 510px) {
+  .slogan {
+    display: none;
+  }
+}
 
 /* landing page */
 .hero {
@@ -76,6 +81,63 @@ a {
   border-radius: 10px;
   margin-bottom: 20px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center; /* Center items horizontally */
+  width: 90%;
+  max-width: 800px;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin: 0 auto; /* Center container */
+}
+.step {
+  display: flex;
+  align-items: center;
+  justify-content: center; /* Center content horizontally */
+  margin: 20px;
+  padding: 10px;
+  border-left: 5px solid #4CAF50;
+  background-color: #e8f5e9;
+  border-radius: 5px;
+  width: calc(45% - 40px); /* Make each step take almost half the width of the container minus margins */
+  box-sizing: border-box;
+}
+.step-icon {
+  background-color: #4CAF50;
+  color: white;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 15px;
+  font-weight: bold;
+}
+.step-content {
+  flex: 1;
+  text-align: left;
+}
+.step p {
+  margin: 0;
+}
+@media (max-width: 600px) {
+  .step {
+      flex-direction: column;
+      align-items: center; /* Center content vertically on small screens */
+      width: 100%; /* Ensure steps take full width on small screens */
+  }
+  .step-icon {
+      margin-bottom: 10px;
+  }
+  .step-content {
+      text-align: center; /* Center text on small screens */
+  }
 }
 
 /* Dashboard*/

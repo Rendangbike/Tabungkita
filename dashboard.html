@@ -9,9 +9,10 @@
 <body>
     <div class="header">
         <a href="/" class="tabungkita"><h1>Tabungkita</h1></a>
+        <h3 class="slogan">Save While You Spend</h3>
         <div class="header-icons">
             <i class="home" onclick="location.href='/';">🏠</i>
-            <i class="globe">🌐</i>
+            <i class="reset" onclick="localStorage.clear(); location.reload();">🔄</i>
         </div>
     </div>
 
@@ -35,25 +36,20 @@
         </div>
     </div>
 
-    <div class="popup" id="addGoalPopup">
-        <button class="exit-button" onclick="hideAddGoalPopup()">✖</button>
-        <h2>Add Goal</h2>
-        <form id="addGoalForm">
-            <label for="goalName">Goal Name:</label>
-            <input type="text" id="goalName" name="goalName" required>
-            <label for="goalAmount">Goal Amount:</label>
-            <input type="number" id="goalAmount" name="goalAmount" required>
-            <label for="duration">Duration:</label>
-            <input type="text" id="duration" name="duration" required>
-            <label for="taxType">Tax Type:</label>
-            <select id="taxType" name="taxType" required>
-                <option value="percentage">Percentage</option>
-                <option value="fixed">Fixed Amount</option>
-            </select>
-            <label for="taxValue">Tax Value:</label>
-            <input type="number" id="taxValue" name="taxValue" required>
-            <button type="submit">Add Goal</button>
-        </form>
+    <div id="addGoalPopup" class="popup">
+        <button class="exit-button" onclick="hideAddGoalPopup();">✖</button>
+        <h2>Add goals...</h2>
+        <label for="goal">Goals:</label>
+        <input type="text" id="goal" placeholder="Your goals that you need money for">
+        <label for="moneyGoal">Money goal:</label>
+        <input type="number" id="moneyGoal" placeholder="The amount of money that you need for this goal">
+        <label for="taxType">Type of tax:</label>
+        <select id="taxType" onchange="changeTaxType()">
+            <option value="account">Tax on preferred basis</option>
+            <option value="purchase">Tax on every purchase</option>
+        </select>
+        <div id="taxDetails"></div>
+        <button onclick="addGoal()">Add</button>
     </div>
     
     <script src="main.js"></script>

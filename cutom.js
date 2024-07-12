@@ -1,10 +1,5 @@
 function showAddGoalPopup() {
     document.getElementById('addGoalPopup').style.display = 'block';
-    changeTaxType();  // Initialize tax details based on default tax type
-}
-
-function hideAddGoalPopup() {
-    document.getElementById('addGoalPopup').style.display = 'none';
 }
 
 function changeTaxType() {
@@ -26,21 +21,19 @@ function changeTaxType() {
     }
 }
 
-function addGoal() {
-    const goal = document.getElementById('goal').value;
+ function addGoal() {
+     const goal = document.getElementById('goal').value;
     const moneyGoal = document.getElementById('moneyGoal').value;
     const taxType = document.getElementById('taxType').value;
     const percentage = document.getElementById('percentage').value;
     const interval = document.getElementById('interval') ? document.getElementById('interval').value : '';
 
-
     if (goal && moneyGoal && percentage && (interval || taxType === 'purchase')) {
         const goals = JSON.parse(localStorage.getItem('goals')) || [];
-        const newGoal = { goalName: goal, goalAmount: moneyGoal, taxType, percentage, duration: interval };
-        goals.push(newGoal);
-        localStorage.setItem('goals', JSON.stringify(goals));
-        addGoalToList(newGoal); // Add the new goal to the DOM
-        document.getElementById('addGoalPopup').style.display = 'none'; // Hide the popup
+        goals.push({ goal, moneyGoal, taxType, percentage, interval });
+         localStorage.setItem('goals', JSON.stringify(goals));
+        document.getElementById('addGoalPopup').classList.remove('active');
+        window.location.reload();
     }
 }
 
@@ -48,22 +41,13 @@ function addGoalToList(goal) {
     const goalList = document.getElementById('goalList');
     const goalCard = document.createElement('div');
     goalCard.className = 'goal-card';
-    const durationText = goal.duration ? ` / ${goal.duration}` : ' / every purchase';
-    
     goalCard.innerHTML = `
         <div>
-            <h1>${goal.goalName}</h1>
-            <p>Rp 01 / <strong>${goal.goalAmount}</strong></p>
-            <p>${goal.percentage}%${durationText}</p>
+            <h2>${goal.goalName}</h2>
+            <p>Rp 0 / <strong>${goal.goalAmount}</strong></p>
+            <p>${goal.taxType} / ${goal.duration}</p>
         </div>
+        
     `;
-    
     goalList.insertBefore(goalCard, goalList.querySelector('.add-goal'));
 }
-
-
-// Load existing goals from localStorage and display them
-document.addEventListener('DOMContentLoaded', () => {
-    const goals = JSON.parse(localStorage.getItem('goals')) || [];
-    goals.forEach(addGoalToList);
-});
