@@ -82,7 +82,11 @@ a {
   margin-bottom: 20px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
-
+.howPeop{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center; /* Center items horizontally */
+}
 .container {
   display: flex;
   flex-wrap: wrap;
