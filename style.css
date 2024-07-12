@@ -1,0 +1,22 @@
+@import url('https://fonts.googleapis.com/css2?family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap');
+body {
+    font-family: Urbanist;
+    max-width: 850px;
+    margin: auto;
+    line-height: 1.6;
+    background-image: url(https://cdn.scratch.mit.edu/scratchr2/static/__f17a70240ea1b997b429416c7f10eabf__/images/scratch-bg.png);
+}
+p.tagline {
+    font-size: 2.5em;
+}
+button {
+    background-color: #04AA6D; /* Green */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    font-family: urbanist;
+  }
