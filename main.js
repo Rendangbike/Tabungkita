@@ -53,7 +53,7 @@ function addGoalToList(goal) {
     goalCard.innerHTML = `
         <div>
             <h1>${goal.goalName}</h1>
-            <p>Rp 01 / <strong>${goal.goalAmount}</strong></p>
+            <p>Rp 0 / <strong>${goal.goalAmount}</strong></p>
             <p>${goal.percentage}%${durationText}</p>
         </div>
     `;
